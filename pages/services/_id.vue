@@ -1542,7 +1542,7 @@ export default {
         }
       }
 
-      // Update all arrays in this.data.serviceTimings with a deep copy of the first array values
+      // Update all arrays in this.data.serviceTimings with a deep copy of the first array valuesss
       for (let k in this.days) {
         console.log(k);
         this.data.serviceTimings[k] = firstArrayValues

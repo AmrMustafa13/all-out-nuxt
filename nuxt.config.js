@@ -7,7 +7,6 @@ require("dotenv").config();
 const { API_URL } = process.env;
 
 export default {
-  buildDir: "dist",
   env: {
     API_URL: API_URL,
   },

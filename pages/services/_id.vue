@@ -1115,8 +1115,9 @@ export default {
         .get("/base/amenities/service/" + id, this.config)
         .then((response) => {
           if (response.data.success) {
-            this.data.amenities = response.data.response;
-            this.data.amenities.forEach((item) => {
+            console.log(response.data);
+            this.data.amenitites = response.data.response;
+            this.data.amenitites.forEach((item) => {
               this.selectedAmenitites.push(item);
             });
           } else this.$toast.error(response.data.message).goAway(1500);

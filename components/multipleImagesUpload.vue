@@ -153,7 +153,7 @@ export default {
         .then((response) => {
           this.isUploading = false;
           this.$emit("upload", {imagePath: response.data.response.msg, imageName : file.name});
-          this.imagePreviews.push(URL.createObjectURL(file));
+          this.imagePreviews.push(response.data.response.msg);
         })
         .catch((error) => {
           this.isUploading = false;

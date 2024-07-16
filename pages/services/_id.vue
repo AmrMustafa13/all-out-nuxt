@@ -706,7 +706,9 @@
                         :key="day + 'day'"
                         class="timing"
                       >
-                        <td style="width: 20%">{{ k }}</td>
+                        <td style="width: 20%">
+                          {{ k.charAt(0).toUpperCase() + k.slice(1) }}
+                        </td>
                         <td style="width: 25%">
                           <div
                             v-for="(section, index) in data.serviceTimings[k]"
@@ -1594,18 +1596,10 @@ export default {
 
 table tbody tr.timing td:first-of-type {
   width: 25%;
-  background: #5d87ff;
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
   font-size: 24px;
-  color: white;
-}
-
-table tbody tr.timing:nth-of-type(2) td:first-of-type,
-table tbody tr.timing:nth-of-type(4) td:first-of-type,
-table tbody tr.timing:nth-of-type(6) td:first-of-type {
-  background-color: #dfe7ff;
-  color: #535b73;
+  color: black;
 }
 
 .blue-day {

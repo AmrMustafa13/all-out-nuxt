@@ -8,6 +8,169 @@
             You can follow up with chatbots details
           </p>
         </div>
+        <!-- start of edit1 -->
+        <form class="mt-4 row" novalidate="">
+          <div class="mb-3 form-group col-5">
+            <label> By Service </label>
+            <div class="controls">
+              <select
+                @change="filter('service', $event)"
+                name="select"
+                id="select"
+                required=""
+                class="form-control"
+                aria-invalid="false"
+              >
+                <option value="">All</option>
+                <!-- <option
+                  :value="item.id"
+                  v-for="item in services.content"
+                  :key="item.id + 'serv'"
+                >
+                  {{ item.titleEn }}
+                </option> -->
+              </select>
+              <div class="help-block"></div>
+            </div>
+          </div>
+          <div class="mb-3 form-group col-2">
+            <label>
+              Display
+              <span class="text-danger">*</span>
+            </label>
+            <div class="controls">
+              <select
+                name="select"
+                id="select"
+                required=""
+                class="form-control"
+                aria-invalid="false"
+              >
+                <option value="">10</option>
+              </select>
+              <div class="help-block"></div>
+            </div>
+          </div>
+          <div class="mb-3 form-group col-2">
+            <label>
+              Order
+              <span class="text-danger">*</span>
+            </label>
+            <div class="controls">
+              <select
+                name="select"
+                id="select"
+                required=""
+                class="form-control"
+                aria-invalid="false"
+              >
+                <option value="">Date Descending</option>
+              </select>
+              <div class="help-block"></div>
+            </div>
+          </div>
+          <div class="mb-3 form-group col-2">
+            <a
+              href="javascript:void(0)"
+              class="btn btn-primary d-flex align-items-center px-3"
+              id="add-notes"
+              style="margin-top: 1.5em"
+            >
+              <i class="ti ti-search me-0 me-md-1 fs-4"></i>
+              <span class="d-none d-md-block font-weight-medium fs-3"
+                >Search</span
+              >
+            </a>
+          </div>
+        </form>
+        <ul
+          class="nav nav-pills p-3 mb-3 rounded align-items-center card flex-row"
+        >
+          <li class="nav-item">
+            <a
+              href="javascript:void(0)"
+              class="nav-link note-link d-flex align-items-center justify-content-center px-3 px-md-3 me-0 me-md-2 text-body-color"
+              id="all-category"
+              @click="filter('status', 'ALL')"
+              :class="{ active: step == 'ALL' }"
+            >
+              <i class="ti ti-list fill-white me-0 me-md-1"></i>
+              <span class="d-none d-md-block font-weight-medium">All</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="javascript:void(0)"
+              class="nav-link note-link d-flex align-items-center justify-content-center px-3 px-md-3 me-0 me-md-2 text-body-color"
+              id="note-business"
+              @click="filter('status', 'Paid')"
+              :class="{ active: step == 'Paid' }"
+            >
+              <span class="d-none d-md-block font-weight-medium">PAID</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="javascript:void(0)"
+              class="nav-link note-link d-flex align-items-center justify-content-center px-3 px-md-3 me-0 me-md-2 text-body-color"
+              id="note-social"
+              @click="filter('status', 'Pending')"
+              :class="{ active: step == 'Pending' }"
+            >
+              <span class="d-none d-md-block font-weight-medium">PENDING</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="javascript:void(0)"
+              class="nav-link note-link d-flex align-items-center justify-content-center px-3 px-md-3 me-0 me-md-2 text-body-color"
+              id="note-social"
+              @click="filter('status', 'Unpaid')"
+              :class="{ active: step == 'Unpaid' }"
+            >
+              <span class="d-none d-md-block font-weight-medium">UNPAID</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="javascript:void(0)"
+              class="nav-link note-link d-flex align-items-center justify-content-center px-3 px-md-3 me-0 me-md-2 text-body-color"
+              id="note-social"
+              @click="filter('status', 'Refunded')"
+              :class="{ active: step == 'Refunded' }"
+            >
+              <span class="d-none d-md-block font-weight-medium">REFUNDED</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="javascript:void(0)"
+              class="nav-link note-link d-flex align-items-center justify-content-center px-3 px-md-3 me-0 me-md-2 text-body-color"
+              id="note-social"
+              @click="filter('status', 'Canceled')"
+              :class="{ active: step == 'Canceled' }"
+            >
+              <span class="d-none d-md-block font-weight-medium">CANCELED</span>
+            </a>
+          </li>
+          <li
+            class="nav-item ms-auto row gap-1"
+            style="position: absolute; right: 1em"
+          >
+            <a
+              href="javascript:void(0)"
+              class="btn btn-primary d-flex align-items-center px-2 col-5"
+              style="width: 5em"
+              id="add-vendor"
+              @click="showModal('addVendorModal')"
+            >
+              <i class="ti ti-file-export me-0 me-md-1 fs-4"></i>
+              <span class="d-none d-md-block font-weight-medium fs-3">New</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- end of edit1 -->
         <div>
           <div style="padding: 16px 16px 0px">
             <h3 style="font-size: 20px; font-weight: 600">List</h3>
@@ -27,6 +190,8 @@
                   <th>N.Users</th>
                   <th>Date</th>
                   <th>Phone</th>
+                  <!-- Added -->
+                  <th>Status</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -44,6 +209,9 @@
                   <td>{{ item.numOfUsers }}</td>
                   <td>{{ getDate(item.dateAndTime) }}</td>
                   <td>{{ item.phoneNumber }}</td>
+                  <!-- Added -->
+                  <td>{{ item.status }}</td>
+
                   <td>
                     <div class="action-btn">
                       <a
@@ -436,3 +604,4 @@ ul.details li strong {
   font-size: 18px;
 }
 </style>
+<!--  -->

@@ -280,7 +280,7 @@
         </div>
 
         <div class="card card-body">
-        <h3>All Customers ({{ listing.length }})</h3>
+          <h3>All Customers ({{ listing.length }})</h3>
           <div class="table-responsive" v-show="load">
             <table class="table search-table align-middle text-nowrap" id="">
               <thead class="header-item">
@@ -497,9 +497,11 @@ export default {
     filter(key, e) {
       this.load = false;
       let value = e.target.value;
-      let url = this.link + "";
-      // let url = this.link + "/" + key + "/" + value;
-      // if (!value) url = this.link;
+      let url = this.link;
+      if (value) {
+        url += `/${key}/${value}`;
+      }
+
       axios
         .get(url, this.config)
         .then((response) => {

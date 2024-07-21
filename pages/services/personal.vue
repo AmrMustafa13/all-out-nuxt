@@ -590,3 +590,11 @@ export default {
   },
 };
 </script>
+
+<style>
+/* Added */
+.action-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+</style>

@@ -220,138 +220,136 @@
               <div class="add-contact-box">
                 <div class="add-contact-content">
                   <!-- <form id="addContactModalTitle"> -->
-                    <div
-                      class="tab-pane fade active show"
-                      id="pills-account"
-                      role="tabpanel"
-                      aria-labelledby="pills-account-tab"
-                      tabindex="0"
-                    >
-                      <div class="row">
-                        <div class="col-lg-4 d-flex align-items-stretch">
-                          <div
-                            class="card w-100 position-relative overflow-hidden"
-                          >
-                            <div class="card-body p-4">
-                              <h5 class="card-title fw-semibold">
-                                Change Profile
-                              </h5>
-                              <p class="card-subtitle mb-4">
-                                Change your profile picture from here
-                              </p>
-                              <div class="text-center">
-                                <img
-                                  src="/assets/Modernize/images/profile/user-1.jpg"
-                                  alt=""
-                                  class="img-fluid rounded-circle"
-                                  width="120"
-                                  height="120"
-                                />
-                                <div
-                                  class="d-flex align-items-center justify-content-center my-4 gap-3"
-                                >
-                                  <button class="btn btn-primary">
-                                    Upload
-                                  </button>
-                                  <button class="btn btn-outline-danger">
-                                    Reset
-                                  </button>
-                                </div>
-                                <p class="mb-0">
-                                  Allowed JPG, GIF or PNG. Max size of 800K
-                                </p>
+                  <div
+                    class="tab-pane fade active show"
+                    id="pills-account"
+                    role="tabpanel"
+                    aria-labelledby="pills-account-tab"
+                    tabindex="0"
+                  >
+                    <div class="row">
+                      <div class="col-lg-4 d-flex align-items-stretch">
+                        <div
+                          class="card w-100 position-relative overflow-hidden"
+                        >
+                          <div class="card-body p-4">
+                            <h5 class="card-title fw-semibold">
+                              Change Profile
+                            </h5>
+                            <p class="card-subtitle mb-4">
+                              Change your profile picture from here
+                            </p>
+                            <div class="text-center">
+                              <img
+                                src="/assets/Modernize/images/profile/user-1.jpg"
+                                alt=""
+                                class="img-fluid rounded-circle"
+                                width="120"
+                                height="120"
+                              />
+                              <div
+                                class="d-flex align-items-center justify-content-center my-4 gap-3"
+                              >
+                                <button class="btn btn-primary">Upload</button>
+                                <button class="btn btn-outline-danger">
+                                  Reset
+                                </button>
                               </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-lg-8 d-flex align-items-stretch">
-                          <div
-                            class="card w-100 position-relative overflow-hidden"
-                          >
-                            <div class="card-body p-4">
-                              <form class="row">
-                                <div class="mb-4 col-6">
-                                  <label
-                                    for="exampleInputPassword1"
-                                    class="form-label fw-semibold"
-                                    >Company name</label
-                                  >
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="exampleInputPassword1"
-                                  />
-                                </div>
-                                <div class="mb-4 col-6">
-                                  <label
-                                    for="exampleInputPassword1"
-                                    class="form-label fw-semibold"
-                                    >Email</label
-                                  >
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="exampleInputPassword1"
-                                  />
-                                </div>
-                                <div class="mb-4 col-6">
-                                  <label
-                                    for="exampleInputPassword1"
-                                    class="form-label fw-semibold"
-                                    >Address</label
-                                  >
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="exampleInputPassword1"
-                                  />
-                                </div>
-                                <div class="mb-4 col-6">
-                                  <label
-                                    for="exampleInputPassword1"
-                                    class="form-label fw-semibold"
-                                    >Language</label
-                                  >
-                                  <select
-                                    name="select"
-                                    id="select"
-                                    required=""
-                                    class="form-control"
-                                    aria-invalid="false"
-                                  >
-                                    <option value="">Arabic</option>
-                                  </select>
-                                </div>
-                                <div class="mb-4 col-6">
-                                  <label
-                                    for="exampleInputPassword1"
-                                    class="form-label fw-semibold"
-                                    >Phone No</label
-                                  >
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="exampleInputPassword1"
-                                  />
-                                </div>
-                                <div class="mb-4 col-6">
-                                  <label
-                                    for="exampleInputPassword1"
-                                    class="form-label fw-semibold"
-                                    >Emirate ID</label
-                                  >
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="exampleInputPassword1"
-                                  />
-                                </div>
-                              </form>
+                              <p class="mb-0">
+                                Allowed JPG, GIF or PNG. Max size of 800K
+                              </p>
                             </div>
                           </div>
                         </div>
                       </div>
+                      <div class="col-lg-8 d-flex align-items-stretch">
+                        <div
+                          class="card w-100 position-relative overflow-hidden"
+                        >
+                          <div class="card-body p-4">
+                            <form class="row">
+                              <div class="mb-4 col-6">
+                                <label
+                                  for="exampleInputPassword1"
+                                  class="form-label fw-semibold"
+                                  >Company name</label
+                                >
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="exampleInputPassword1"
+                                />
+                              </div>
+                              <div class="mb-4 col-6">
+                                <label
+                                  for="exampleInputPassword1"
+                                  class="form-label fw-semibold"
+                                  >Email</label
+                                >
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="exampleInputPassword1"
+                                />
+                              </div>
+                              <div class="mb-4 col-6">
+                                <label
+                                  for="exampleInputPassword1"
+                                  class="form-label fw-semibold"
+                                  >Address</label
+                                >
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="exampleInputPassword1"
+                                />
+                              </div>
+                              <div class="mb-4 col-6">
+                                <label
+                                  for="exampleInputPassword1"
+                                  class="form-label fw-semibold"
+                                  >Language</label
+                                >
+                                <select
+                                  name="select"
+                                  id="select"
+                                  required=""
+                                  class="form-control"
+                                  aria-invalid="false"
+                                >
+                                  <option value="">Arabic</option>
+                                </select>
+                              </div>
+                              <div class="mb-4 col-6">
+                                <label
+                                  for="exampleInputPassword1"
+                                  class="form-label fw-semibold"
+                                  >Phone No</label
+                                >
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="exampleInputPassword1"
+                                />
+                              </div>
+                              <div class="mb-4 col-6">
+                                <label
+                                  for="exampleInputPassword1"
+                                  class="form-label fw-semibold"
+                                  >Emirate ID</label
+                                >
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="exampleInputPassword1"
+                                />
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
                     </div>
+                  </div>
                   <!-- </form> -->
                 </div>
               </div>

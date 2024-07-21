@@ -245,7 +245,7 @@
                 <td>{{ item.email }}</td>
                 <td>{{ item.phone }}</td>
                 <td>{{ item.address }}</td>
-                <td>{{ item.branchId }}</td>
+                <td>{{ item.date }}</td>
                 <td>
                   <div class="action-btn">
                     <a href="javascript:void(0)" class="text-info edit">

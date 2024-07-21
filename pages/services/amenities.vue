@@ -161,7 +161,7 @@
                 <th>Image</th>
                 <th>Name</th>
                 <th>Priority</th>
-                <th>Branch</th>
+                <!-- <th>Branch</th> -->
                 <th>Status</th>
                 <th>Action</th>
               </tr>
@@ -179,7 +179,7 @@
                 </td>
                 <td>{{ item.titleEn }}</td>
                 <td>{{ item.priority }}</td>
-                <td>{{ item.branchName }}</td>
+                <!-- <td>{{ item.branchName }}</td> -->
                 <td>
                   <span v-if="item.isActive" class="btn btn-sm badge-success"
                     >Active</span
@@ -212,7 +212,7 @@
                 <th>Image</th>
                 <th>Name</th>
                 <th>Priority</th>
-                <th>Branch</th>
+                <!-- <th>Branch</th> -->
                 <th>Status</th>
                 <th>Action</th>
               </tr>

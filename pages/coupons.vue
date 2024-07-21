@@ -212,6 +212,7 @@
                 <th>Title</th>
                 <th>Coupon Code</th>
                 <th>Duration</th>
+                <th>Status</th>
                 <th>Service</th>
                 <th>Vendor</th>
                 <th>Customer</th>
@@ -242,6 +243,7 @@
                 <td>
                   {{ getDate(item.startDate) + " " + getDate(item.expireDate) }}
                 </td>
+                <td>{{ item.status }}</td>
                 <td>{{ item.serviceId }}</td>
                 <td>{{ item.vendorId }}</td>
                 <td>{{ item.customerId }}</td>

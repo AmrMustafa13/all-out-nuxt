@@ -595,6 +595,6 @@ export default {
 /* Added */
 .action-btn {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 </style>

@@ -632,3 +632,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.action-btn {
+  display: flex;
+  justify-content: center;
+}
+</style>

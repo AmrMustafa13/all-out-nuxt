@@ -18,7 +18,8 @@
               <h3 class="fw-semibold">
                 <span class="text-dark">{{ data.name }}</span>
               </h3>
-              <span>ID #{{ data.id }}, Joining Date: {{ data.createdDate }}</span
+              <span
+                >ID #{{ data.id }}, Joining Date: {{ data.createdDate }}</span
               ><br />
               <span>Email: {{ data.email }}</span
               ><br />
@@ -110,7 +111,11 @@
                         aria-selected="false"
                         tabindex="-1"
                       >
-                        <span>Notifications ({{ notifications.totalElements }})</span>
+                        <span
+                          >Notifications ({{
+                            notifications.totalElements
+                          }})</span
+                        >
                       </a>
                     </li>
                     <li class="nav-item" role="presentation">
@@ -168,14 +173,6 @@
                           <td>
                             <div class="action-btn">
                               <a
-                                @click="goto(item.id)"
-                                href="javascript:void(0)"
-                                class="text-info ms-2"
-                                style="padding-top: 5px"
-                              >
-                                <i class="ti ti-eye fs-5"></i>
-                              </a>
-                              <a
                                 @click="
                                   performAction(
                                     item.id,
@@ -214,7 +211,10 @@
                         <th class="text-end">Action</th>
                       </thead>
                       <tbody>
-                        <tr v-for="item in reviews.content" :key="'reviews-' + item.id">
+                        <tr
+                          v-for="item in reviews.content"
+                          :key="'reviews-' + item.id"
+                        >
                           <td>{{ item.id }}</td>
                           <td>
                             <img
@@ -233,7 +233,9 @@
                               class="btn btn-sm badge-success"
                               >Yes</span
                             >
-                            <span v-else class="btn btn-sm badge-danger">No</span>
+                            <span v-else class="btn btn-sm badge-danger"
+                              >No</span
+                            >
                           </td>
                           <td>{{ item.url }}</td>
                           <td>{{ item.title }}</td>
@@ -300,7 +302,9 @@
                           <td>{{ item.title }}</td>
                           <td>{{ item.message }}</td>
                           <td>
-                            <span v-if="item.status" class="btn btn-sm badge-success"
+                            <span
+                              v-if="item.status"
+                              class="btn btn-sm badge-success"
                               >Active</span
                             >
                             <span v-else class="btn btn-sm badge-danger"
@@ -578,5 +582,11 @@ export default {
 <style scoped>
 img.rounded-circle {
   height: 4.3em;
+}
+
+.action-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

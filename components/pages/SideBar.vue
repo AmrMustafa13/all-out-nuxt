@@ -72,7 +72,7 @@
                   <span class="hide-menu">{{ $t("Manage") }}</span>
                 </nuxt-link>
               </li>
-              <li class="sidebar-item">
+              <!-- <li class="sidebar-item">
                 <nuxt-link to="/booking/combo" class="sidebar-link">
                   <div
                     class="round-16 d-flex align-items-center justify-content-center"
@@ -91,7 +91,7 @@
                   </div>
                   <span class="hide-menu">{{ $t("Refund") }}</span>
                 </nuxt-link>
-              </li>
+              </li> -->
             </ul>
           </li>
           <li class="sidebar-item">

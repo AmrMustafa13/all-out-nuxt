@@ -393,7 +393,7 @@
               </div>
               <div class="col-4">
                 <div class="col-12">
-                  <div class="col-12" style="margin-bottom:1em;">
+                  <div class="col-12" style="margin-bottom: 1em">
                     <b>Customer Information</b>
                   </div>
                   <div
@@ -457,10 +457,10 @@
                       rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
                   "
                 >
-                  <div class="sendMessage" style="right: 3px; top: 3px">
+                  <!-- <div class="sendMessage" style="right: 3px; top: 3px">
                     <i class="ti ti-eye"></i>
-                  </div>
-                  <div class="">
+                  </div> -->
+                  <!-- <div class="">
                     <p class="fw-semibold text-black">Booking Logs</p>
                   </div>
                   <table class="table-responsive">
@@ -490,7 +490,7 @@
                         </td>
                       </tr>
                     </tbody>
-                  </table>
+                  </table> -->
                 </div>
               </div>
             </div>

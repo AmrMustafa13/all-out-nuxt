@@ -119,7 +119,11 @@
               <div class="row col-12">
                 <div class="col-6">
                   <div class="image-loyalty">
-                    <img src="/assets/Modernize/icons/bronze.png" alt="" />
+                    <img
+                      class="icons-style"
+                      src="/assets/Modernize/icons/bronze.png"
+                      alt=""
+                    />
                     <p>Bronze <br />Membership</p>
                   </div>
                   <div class="mb-3 form-group">
@@ -143,7 +147,11 @@
                 </div>
                 <div class="col-6">
                   <div class="image-loyalty">
-                    <img src="/assets/Modernize/icons/gold.png" alt="" />
+                    <img
+                      class="icons-style"
+                      src="/assets/Modernize/icons/gold.png"
+                      alt=""
+                    />
                     <p>Gold <br />Membership</p>
                   </div>
                   <div class="mb-3 form-group">
@@ -167,7 +175,11 @@
                 </div>
                 <div class="col-6">
                   <div class="image-loyalty">
-                    <img src="/assets/Modernize/icons/silver.png" alt="" />
+                    <img
+                      class="icons-style"
+                      src="/assets/Modernize/icons/silver.png"
+                      alt=""
+                    />
                     <p>Silver <br />Membership</p>
                   </div>
                   <div class="mb-3 form-group">
@@ -191,7 +203,11 @@
                 </div>
                 <div class="col-6">
                   <div class="image-loyalty">
-                    <img src="/assets/Modernize/icons/platinum.png" alt="" />
+                    <img
+                      class="icons-style"
+                      src="/assets/Modernize/icons/platinum.png"
+                      alt=""
+                    />
                     <p>Platinum <br />Membership</p>
                   </div>
                   <div class="mb-3 form-group">
@@ -403,11 +419,15 @@ export default {
 }
 .image-loyalty img {
   margin: 0;
-  height: 10em;
+  /* height: 10em; */
 }
 .image-loyalty p {
   font-size: 24px;
   font-weight: 500;
-  margin: 5% 0;
+  /* margin: 5% 0; */
+}
+.icons-style {
+  max-width: 70px;
+  max-height: 70px;
 }
 </style>

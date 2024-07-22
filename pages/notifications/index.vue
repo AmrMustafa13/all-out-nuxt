@@ -158,7 +158,7 @@
               <tr>
                 <!-- <th>Image</th> -->
                 <!-- <th>Customer</th> -->
-                <th>Branch</th>
+                <th>Image</th>
                 <th>Type</th>
                 <th>Title</th>
                 <th>Message</th>
@@ -261,7 +261,7 @@
         >
           <div class="modal-content">
             <div class="modal-header d-flex align-items-center">
-              <h5 class="modal-title">{{ $t("Add Vendor") }}</h5>
+              <h5 class="modal-title">{{ $t("Send Notification") }}</h5>
               <button
                 type="button"
                 class="btn-close"
@@ -289,14 +289,19 @@
                         >
                           <div class="card-body p-4">
                             <form class="row">
-                              <FileUpload
+                              <SingleImageUpload
+                                @upload="handleSingleImageUpload"
+                                :imagePath="data.imagePath"
+                                :params="'Services'"
+                              />
+                              <!-- <FileUpload
                                 @upload="handleSingleFileUpload"
                                 :fileList="filesList"
                                 :upload="true"
                                 :multiple="false"
                                 :params="uploadType"
                                 :key="uploadComponenet"
-                              />
+                              /> -->
                               <!-- <div class="mb-4 col-4">
                                 <label
                                   for="exampleInputPassword1"
@@ -546,8 +551,7 @@ export default {
         this.tmpLink = this.link + "/type/" + value + "?page=0&size=10";
       else if (key == "branch")
         this.tmpLink = this.link + "/branch/" + value + "?page=0&size=10";
-      else
-        this.tmpLink = this.link;
+      else this.tmpLink = this.link;
       if (!value) url = this.link;
       axios
         .get(url, this.config)
@@ -646,8 +650,11 @@ export default {
         });
       }, 300);
     },
-    handleSingleFileUpload(file) {
-      this.file = file;
+    // handleSingleFileUpload(file) {
+    //   this.file = file;
+    // },
+    handleSingleImageUpload(image) {
+      this.data.file = image;
     },
     submit() {
       const formData = {

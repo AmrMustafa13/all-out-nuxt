@@ -180,7 +180,7 @@
                   />
                 </td>
                 <!-- <td>{{ item.customersId }}</td> -->
-                <td>{{ item.branchId }}</td>
+                <!-- <td>{{ item.branchId }}</td> -->
                 <td>{{ item.type }}</td>
                 <td>{{ item.title }}</td>
                 <td>{{ item.message }}</td>

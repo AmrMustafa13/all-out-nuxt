@@ -84,7 +84,7 @@
             <div class="help-block"></div>
           </div>
         </div>
-        <div class="mb-3 form-group col-3">
+        <!-- <div class="mb-3 form-group col-3">
           <label> Date From </label>
           <div class="controls">
             <input
@@ -111,7 +111,7 @@
             />
             <div class="help-block"></div>
           </div>
-        </div>
+        </div> -->
         <div class="mb-3 form-group col-3">
           <label>
             Order
@@ -228,7 +228,7 @@
                 <th>Email</th>
                 <th>Phone</th>
                 <th>Company Name</th>
-                <th>Date</th>
+                <!-- <th>Date</th> -->
                 <th>Action</th>
               </tr>
             </thead>
@@ -245,7 +245,7 @@
                 <td>{{ item.email }}</td>
                 <td>{{ item.phone }}</td>
                 <td>{{ item.address }}</td>
-                <td>{{ item.date }}</td>
+                <!-- <td>{{ item.date }}</td> -->
                 <td>
                   <div class="action-btn">
                     <a href="javascript:void(0)" class="text-info edit">

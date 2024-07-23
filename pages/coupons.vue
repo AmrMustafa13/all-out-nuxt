@@ -116,7 +116,7 @@
             <div class="help-block"></div>
           </div>
         </div>
-        <div class="mb-3 form-group col-3">
+        <!-- <div class="mb-3 form-group col-3">
           <label>
             Status
             <span class="text-danger">*</span>
@@ -138,7 +138,7 @@
             </select>
             <div class="help-block"></div>
           </div>
-        </div>
+        </div> -->
       </form>
       <ul
         class="nav nav-pills p-3 mb-3 rounded align-items-center card flex-row"
@@ -212,7 +212,7 @@
                 <th>Title</th>
                 <th>Coupon Code</th>
                 <th>Duration</th>
-                <th>Status</th>
+                <!-- <th>Status</th> -->
                 <th>Service</th>
                 <th>Vendor</th>
                 <th>Customer</th>
@@ -243,7 +243,7 @@
                 <td>
                   {{ getDate(item.startDate) + " " + getDate(item.expireDate) }}
                 </td>
-                <td>{{ item.status }}</td>
+                <!-- <td>{{ item.status }}</td> -->
                 <td>{{ item.serviceId }}</td>
                 <td>{{ item.vendorId }}</td>
                 <td>{{ item.customerId }}</td>

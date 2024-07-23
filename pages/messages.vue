@@ -58,6 +58,7 @@
                   class="form-control search-chat py-2 ps-5"
                   id="text-srh"
                   placeholder="Search Contact"
+                  v-model="searchQuery"
                 />
                 <i
                   class="ti ti-search position-absolute top-50 start-0 translate-middle-y fs-6 text-dark ms-3"
@@ -117,7 +118,10 @@
                         style="height: 100%; overflow: hidden scroll"
                       >
                         <div class="simplebar-content" style="padding: 0px">
-                          <li v-for="item in listing" :key="item.id + 'chat'">
+                          <li
+                            v-for="item in filteredListing"
+                            :key="item.id + 'chat'"
+                          >
                             <a
                               href="javascript:void(0)"
                               class="px-4 py-3 bg-hover-light-black d-flex align-items-start justify-content-between chat-user text-bg-light"
@@ -466,6 +470,7 @@ export default {
   name: "usertype",
   data() {
     return {
+      searchQuery: "",
       link: "/branch/api/chats",
       dataTable: null,
       stompClient: null,
@@ -491,6 +496,16 @@ export default {
     }
   },
   component: {},
+  computed: {
+    filteredListing() {
+      if (this.searchQuery) {
+        return this.listing.filter(
+          (item) => item.chatRoomId == this.searchQuery
+        );
+      }
+      return this.listing;
+    },
+  },
   methods: {
     ago(dating) {
       let now = new Date();

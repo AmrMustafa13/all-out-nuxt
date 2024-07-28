@@ -129,6 +129,7 @@
                   class="form-control product-search ps-5"
                   id="input-search"
                   placeholder="Search Contacts..."
+                  v-model="searchQuery"
                 />
                 <i
                   class="ti ti-search position-absolute top-50 start-0 translate-middle-y fs-6 text-dark ms-3"
@@ -315,7 +316,7 @@
                 <!-- start row -->
                 <tr
                   class="search-items"
-                  v-for="item in listing"
+                  v-for="item in filteredListing"
                   :key="'user-' + item.id"
                 >
                   <td>
@@ -454,6 +455,7 @@ export default {
   name: "usertype",
   data() {
     return {
+      searchQuery: "",
       dataTable: null,
       load: false,
       file: null,
@@ -493,6 +495,19 @@ export default {
     this.getAll();
   },
   component: { FileUpload },
+  computed: {
+    filteredListing() {
+      if (this.searchQuery) {
+        return this.listing.filter(
+          (item) =>
+            item.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+            item.email.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+            item.phone.toLowerCase().includes(this.searchQuery.toLowerCase())
+        );
+      }
+      return this.listing;
+    },
+  },
   methods: {
     filter(key, e) {
       this.load = false;

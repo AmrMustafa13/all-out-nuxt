@@ -248,11 +248,11 @@
                 <!-- <td>{{ item.date }}</td> -->
                 <td>
                   <div class="action-btn">
-                    <a href="javascript:void(0)" class="text-info edit">
+                    <!-- <a href="javascript:void(0)" class="text-info edit">
                       <div class="eye-display">
                         <i class="ti ti-eye"></i>
                       </div>
-                    </a>
+                    </a> -->
                     <a
                       @click="goto(item.id)"
                       href="javascript:void(0)"

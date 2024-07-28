@@ -9,24 +9,48 @@
                 <i class="ti ti-arrow-left"></i>
                 <div>
                   <h5 class="card-title fw-semibold">Booking Details</h5>
-                  <p class="card-subtitle"> You can follow up with booking details </p>
+                  <p class="card-subtitle">
+                    You can follow up with booking details
+                  </p>
                 </div>
               </div>
             </div>
 
             <div class="col-12 bx-gray">
               <div class="mb-4 col-6">
-                <label for="exampleInputPassword1" class="form-label fw-semibold">Booking Status :</label>
-                <select @change="updatePaymentStatus($event)" name="select" v-model="data.paymentStatus" id="select"
-                  required="" class="form-select" aria-invalid="false">
-                  <option :value="item.title" v-for="item in statuses" :key="item.title">
-                    {{ item.title.charAt(0).toUpperCase() + item.title.slice(1).toLowerCase() }}
+                <label
+                  for="exampleInputPassword1"
+                  class="form-label fw-semibold"
+                  >Booking Status :</label
+                >
+                <select
+                  @change="updatePaymentStatus($event)"
+                  name="select"
+                  v-model="data.paymentStatus"
+                  id="select"
+                  required=""
+                  class="form-select"
+                  aria-invalid="false"
+                >
+                  <option
+                    :value="item.title"
+                    v-for="item in statuses"
+                    :key="item.title"
+                  >
+                    {{
+                      item.title.charAt(0).toUpperCase() +
+                      item.title.slice(1).toLowerCase()
+                    }}
                   </option>
                 </select>
               </div>
               <div class="d-flex">
                 <div class="mb-4 col-6">
-                  <label for="exampleInputPassword1" class="form-label fw-semibold">Payment Status :</label>
+                  <label
+                    for="exampleInputPassword1"
+                    class="form-label fw-semibold"
+                    >Payment Status :</label
+                  >
                   <div class="col-12">
                     <select v-model="data.status" class="form-select">
                       <option :value="0">Unpaid</option>
@@ -34,22 +58,30 @@
                     </select>
                   </div>
                 </div>
-                <div class="row mb-4 col-6 " style="margin: 0 3px; gap: 0px">
-                  <label for="exampleInputPassword1" class="form-label fw-semibold">Date :</label>
-                  <div @click="showModal('addVendorModal')" class="col-12 addvendormodal">
+                <div class="row mb-4 col-6" style="margin: 0 3px; gap: 0px">
+                  <label
+                    for="exampleInputPassword1"
+                    class="form-label fw-semibold"
+                    >Date :</label
+                  >
+                  <div
+                    @click="showModal('addVendorModal')"
+                    class="col-12 addvendormodal"
+                  >
                     <div class="mt-1">
-                      {{ getDate(data.bookingTime, true) }} - {{ getDate(data.bookingTime, true) }}
+                      {{ getDate(data.bookingTime, true) }} -
+                      {{ getDate(data.bookingTime, true) }}
                     </div>
                     <div class="mt-1">10:00 - 14:00</div>
-                    <div style="flex-grow: 5; text-align: right;">
+                    <div style="flex-grow: 5; text-align: right">
                       <i class="ti ti-calendar fs-6"></i>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="btns">
-                <button class="send-notification"> Send Notification </button>
-                <button class="cancel-booking">Cancel Booking </button>
+                <button class="send-notification">Send Notification</button>
+                <button class="cancel-booking">Cancel Booking</button>
               </div>
             </div>
 
@@ -64,10 +96,18 @@
                   <h5>{{ customer.name }}</h5>
                   <div>
                     <div>
-                      <span> <i class="ti ti-map-pin"></i> &nbsp;&nbsp;:&nbsp;&nbsp; {{ customer.address || 'NONE'
-                        }}</span>
-                      <span> <i class="ti ti-building-bank"></i> &nbsp;&nbsp;:&nbsp;&nbsp; {{ customer.email }}</span>
-                      <span> <i class="ti ti-phone"></i> &nbsp;&nbsp;:&nbsp;&nbsp; {{ customer.phone }}</span>
+                      <span>
+                        <i class="ti ti-map-pin"></i> &nbsp;&nbsp;:&nbsp;&nbsp;
+                        {{ customer.address || "NONE" }}</span
+                      >
+                      <span>
+                        <i class="ti ti-building-bank"></i>
+                        &nbsp;&nbsp;:&nbsp;&nbsp; {{ customer.email }}</span
+                      >
+                      <span>
+                        <i class="ti ti-phone"></i> &nbsp;&nbsp;:&nbsp;&nbsp;
+                        {{ customer.phone }}</span
+                      >
                     </div>
                   </div>
                 </div>
@@ -83,18 +123,29 @@
                 </tr>
                 <tbody>
                   <tr class="body" v-for="item in logs" :key="item.id">
-                    <td class="log"><span>{{ item.dataJSON.OLD_ID }} ► {{ item.dataJSON.BOOKING_TIME }} ► {{
-                      item.dataJSON.TOTAL_PRICE }} ► {{ item.dataJSON.NUMBER_OF_GUESTS }} ► {{
-                      item.dataJSON.PAYMENT_STATUS }} ► {{ item.dataJSON.SERVICE_TIMING_ID }}</span></td>
-                    <td class="date"><span>{{ item.actionTime }}</span></td>
+                    <td class="log">
+                      <span
+                        >{{ item.dataJSON.OLD_ID }} ►
+                        {{ item.dataJSON.BOOKING_TIME }} ►
+                        {{ item.dataJSON.TOTAL_PRICE }} ►
+                        {{ item.dataJSON.NUMBER_OF_GUESTS }} ►
+                        {{ item.dataJSON.PAYMENT_STATUS }} ►
+                        {{ item.dataJSON.SERVICE_TIMING_ID }}</span
+                      >
+                    </td>
+                    <td class="date">
+                      <span>{{ item.actionTime }}</span>
+                    </td>
                   </tr>
-
                 </tbody>
               </table>
             </div>
 
             <div class="col-12">
-              <div class="d-flex align-items-center" style="padding-bottom: 15px;">
+              <div
+                class="d-flex align-items-center"
+                style="padding-bottom: 15px"
+              >
                 <h6 class="heading-with-line">Summary</h6>
                 <div class="line"></div>
               </div>
@@ -102,32 +153,46 @@
                 <div class="col-12 row">
                   <div class="col-4">
                     <div>
-                      <img class="rounded-2 img-fluid mb-9" :src="service.imagePath" :alt="service.titleEn" />
+                      <img
+                        class="rounded-2 img-fluid mb-9"
+                        :src="service.imagePath"
+                        :alt="service.titleEn"
+                      />
                     </div>
                     <div class="col-12 text-center row">
                       <div>
-                        <h4 style="display: inline;">Amenities : </h4>
+                        <h4 style="display: inline">Amenities :</h4>
                         <span v-if="amenities">
-                          <div class="col-4" v-for="item in amenities" :key="item.id + 'ame'">
-                            <img class="rounded-2 img-fluid mb-9" :src="item.imagePath" :alt="service.titleEn" />
+                          <div
+                            class="col-4"
+                            v-for="item in amenities"
+                            :key="item.id + 'ame'"
+                          >
+                            <img
+                              class="rounded-2 img-fluid mb-9"
+                              :src="item.imagePath"
+                              :alt="service.titleEn"
+                            />
                             <p class="fs-2 text-center">{{ item.titleEn }}</p>
                           </div>
                         </span>
                         <span v-else>No Amenities</span>
                       </div>
                       <div>
-                        <h4 style="display: inline;">Adrenaline Meter : </h4>
-                        <span :class="{
-      'badge-success':
-        adrenaline.titleEn == 'Low Adrenaline',
-      'badge-warning':
-        adrenaline.titleEn == 'Medium Adrenaline',
-      'badge-danger':
-        adrenaline.titleEn == 'High Adrenaline',
-    }" class="">{{ adrenaline.titleEn }}
+                        <h4 style="display: inline">Adrenaline Meter :</h4>
+                        <span
+                          :class="{
+                            'badge-success':
+                              adrenaline.titleEn == 'Low Adrenaline',
+                            'badge-warning':
+                              adrenaline.titleEn == 'Medium Adrenaline',
+                            'badge-danger':
+                              adrenaline.titleEn == 'High Adrenaline',
+                          }"
+                          class=""
+                          >{{ adrenaline.titleEn }}
                         </span>
                       </div>
-
                     </div>
                   </div>
                   <div class="col-8">
@@ -135,108 +200,147 @@
                       <h4 style="color: rgb(42, 53, 71); font-weight: 600">
                         {{ service.titleEn }}
                       </h4>
-                      <p style="
+                      <p
+                        style="
                           position: absolute;
                           right: 0;
                           top: 0;
                           font-weight: 200;
-                        ">
+                        "
+                      >
                         Booking No.
-                        <span style="font-weight: 500; color: rgb(42, 53, 71)"># {{ service.categoryId }} {{ booking.id
-                          }}</span>
+                        <span style="font-weight: 500; color: rgb(42, 53, 71)"
+                          ># {{ service.categoryId }} {{ booking.id }}</span
+                        >
                       </p>
                     </div>
                     <div class="col-12" style="position: relative">
-                      <p style="color: rgb(255 255 255)">
-                        -
-                      </p>
+                      <p style="color: rgb(255 255 255)">-</p>
                       <p style="position: absolute; right: 0; top: 0">
                         Payment No. #{{ data.id }}
                       </p>
                     </div>
-                    <hr style="border-top: 2px dashed #dddddd; width: 200px;" />
+                    <hr style="border-top: 2px dashed #dddddd; width: 200px" />
                     <div class="col-12" style="position: relative">
                       <p class="fs-2">
-                        <b style="color: rgb(42, 53, 71); font-size: 15px;">Created On &nbsp; : &nbsp;</b>
+                        <b style="color: rgb(42, 53, 71); font-size: 15px"
+                          >Created On &nbsp; : &nbsp;</b
+                        >
                         {{ getDate(data.paymentDate) }}
                       </p>
                       <p class="fs-2">
-                        <b style="color: rgb(42, 53, 71); font-size: 15px;">Booking Date &nbsp; : &nbsp;</b>
+                        <b style="color: rgb(42, 53, 71); font-size: 15px"
+                          >Booking Date &nbsp; : &nbsp;</b
+                        >
                         {{ getDate(booking.bookingTime) }}
                       </p>
                       <p class="fs-3">
                         <i class="ti ti-user fs-4"></i>
                         {{ data.numberOfGuests }} persons
                       </p>
-                      <p :class="{
-      'badge-success': data.paymentStatus == 'PAID',
-      'badge-warning pending': data.paymentStatus == 'PENDING',
-      'badge-info': data.paymentStatus == 'REFUNDED',
-      'badge-danger':
-        data.paymentStatus == 'UNPAID' ||
-        data.paymentStatus == 'CANCELED',
-    }" class="btn btn-sm" style="position: absolute; right: 0; top: 0">
+                      <p
+                        :class="{
+                          'badge-success': data.paymentStatus == 'PAID',
+                          'badge-warning pending':
+                            data.paymentStatus == 'PENDING',
+                          'badge-info': data.paymentStatus == 'REFUNDED',
+                          'badge-danger':
+                            data.paymentStatus == 'UNPAID' ||
+                            data.paymentStatus == 'CANCELED',
+                        }"
+                        class="btn btn-sm"
+                        style="position: absolute; right: 0; top: 0"
+                      >
                         {{ data.paymentStatus }}
                       </p>
                     </div>
-                    <hr style="border-top: 2px dashed #dddddd; width: 200px;" />
+                    <hr style="border-top: 2px dashed #dddddd; width: 200px" />
                     <div class="col-12" style="position: relative">
                       <p>
-                        <span class="fs-3"><b style="color: rgb(42, 53, 71)">Summarys</b></span><span
-                          style="float: right; color: rgb(93, 135, 255)"><i class="ti ti-cash fs-7"></i>
-                          {{ invoice.paymentMethod }}</span>
+                        <span class="fs-3"
+                          ><b style="color: rgb(42, 53, 71)">Summarys</b></span
+                        ><span style="float: right; color: rgb(93, 135, 255)"
+                          ><i class="ti ti-cash fs-7"></i>
+                          {{ invoice.paymentMethod }}</span
+                        >
                       </p>
                       <p class="mb-1">
-                        <span style="color: rgb(42, 53, 71)" class="fs-3">Activity Fees</span><span style="
+                        <span style="color: rgb(42, 53, 71)" class="fs-3"
+                          >Activity Fees</span
+                        ><span
+                          style="
                             float: right;
                             color: rgb(42, 53, 71);
                             font-weight: 450;
-                          ">
-                          {{ money(invoice.serviceFee) }}</span>
+                          "
+                        >
+                          {{ money(invoice.serviceFee) }}</span
+                        >
                       </p>
                       <p class="mb-1">
-                        <span style="color: rgb(42, 53, 71)" class="fs-3">Subtotal</span><span style="
+                        <span style="color: rgb(42, 53, 71)" class="fs-3"
+                          >Subtotal</span
+                        ><span
+                          style="
                             float: right;
                             color: rgb(42, 53, 71);
                             font-weight: 450;
-                          ">
-                          {{ money(invoice.subTotal) }}</span>
+                          "
+                        >
+                          {{ money(invoice.subTotal) }}</span
+                        >
                       </p>
                       <p class="mb-1">
-                        <span style="color: rgb(42, 53, 71)" class="fs-3">Price After Discount</span><span style="
+                        <span style="color: rgb(42, 53, 71)" class="fs-3"
+                          >Price After Discount</span
+                        ><span
+                          style="
                             float: right;
                             color: rgb(42, 53, 71);
                             font-weight: 450;
-                          ">
-                          {{ money(invoice.priceAfterDiscount) }}</span>
+                          "
+                        >
+                          {{ money(invoice.priceAfterDiscount) }}</span
+                        >
                       </p>
                       <p class="mb-1">
-                        <span style="color: rgb(42, 53, 71)" class="fs-3">VAT 5%</span><span style="
+                        <span style="color: rgb(42, 53, 71)" class="fs-3"
+                          >VAT 5%</span
+                        ><span
+                          style="
                             float: right;
                             color: rgb(42, 53, 71);
                             font-weight: 450;
-                          ">
-                          {{ money(invoice.vat) }}</span>
+                          "
+                        >
+                          {{ money(invoice.vat) }}</span
+                        >
                       </p>
                       <p class="mt-4">
-                        <span><b style="color: rgb(42, 53, 71)">Total Amount</b></span><span
-                          style="float: right; color: rgb(93, 135, 255)">
-                          <b>{{ money(invoice.totalAmount) }}</b></span>
+                        <span
+                          ><b style="color: rgb(42, 53, 71)"
+                            >Total Amount</b
+                          ></span
+                        ><span style="float: right; color: rgb(93, 135, 255)">
+                          <b>{{ money(invoice.totalAmount) }}</b></span
+                        >
                       </p>
                     </div>
-                    <hr style="border-top: 2px dashed #dddddd; width: 200px;" />
+                    <hr style="border-top: 2px dashed #dddddd; width: 200px" />
                     <p class="mt-4">
-                      <span><b style="color: rgb(42, 53, 71)">Amount after split invoice</b></span><span
-                        style="float: right; color: rgb(93, 135, 255)">
-                        <b>{{ money(invoice.totalAmount) }}</b></span>
+                      <span
+                        ><b style="color: rgb(42, 53, 71)"
+                          >Amount after split invoice</b
+                        ></span
+                      ><span style="float: right; color: rgb(93, 135, 255)">
+                        <b>{{ money(invoice.totalAmount) }}</b></span
+                      >
                     </p>
-                    <hr style="border-top: 2px dashed #dddddd; width: 200px;" />
+                    <hr style="border-top: 2px dashed #dddddd; width: 200px" />
                   </div>
                 </div>
               </div>
             </div>
-
-
           </div>
         </div>
         <div style class="card w-100">
@@ -244,14 +348,17 @@
             <div class="col-12 row">
               <div class="col-12">
                 <h5 class="card-title fw-semibold">Reviews</h5>
-                <p class="card-subtitle" style="padding-bottom: 20px;">
+                <p class="card-subtitle" style="padding-bottom: 20px">
                   You can follow up with booking's reviews
                 </p>
               </div>
             </div>
             <div class="col-12 row">
               <div class="table-responsive">
-                <table id="" class="table search-table align-middle text-nowrap">
+                <table
+                  id=""
+                  class="table search-table align-middle text-nowrap"
+                >
                   <thead class="header-item">
                     <th>ID</th>
                     <th>Image</th>
@@ -266,16 +373,28 @@
                     <th class="text-end">Action</th>
                   </thead>
                   <tbody>
-                    <tr v-for="item in reviews.content" :key="'reviews-' + item.id">
+                    <tr
+                      v-for="item in reviews.content"
+                      :key="'reviews-' + item.id"
+                    >
                       <td>{{ item.id }}</td>
                       <td>
-                        <img height="50" width="50" :src="item.imagePath" :alt="item.title" />
+                        <img
+                          height="50"
+                          width="50"
+                          :src="item.imagePath"
+                          :alt="item.title"
+                        />
                       </td>
                       <td>
                         {{ item.bannerType }}
                       </td>
                       <td>
-                        <span v-if="item.published == 'Yes'" class="btn btn-sm badge-success">Yes</span>
+                        <span
+                          v-if="item.published == 'Yes'"
+                          class="btn btn-sm badge-success"
+                          >Yes</span
+                        >
                         <span v-else class="btn btn-sm badge-danger">No</span>
                       </td>
                       <td>{{ item.url }}</td>
@@ -286,12 +405,16 @@
                       <td>{{ item.rate }}</td>
                       <td>
                         <div class="action-btn">
-                          <a @click="
-      performAction(
-        item.id,
-        '/branch/api/reviews/' + item.id
-      )
-      " href="javascript:void(0)" class="text-dark ms-2">
+                          <a
+                            @click="
+                              performAction(
+                                item.id,
+                                '/branch/api/reviews/' + item.id
+                              )
+                            "
+                            href="javascript:void(0)"
+                            class="text-dark ms-2"
+                          >
                             <i class="ti ti-trash fs-5"></i>
                           </a>
                         </div>
@@ -308,7 +431,7 @@
             <div class="col-12 row">
               <div class="col-12">
                 <h5 class="card-title fw-semibold">Payments Invitations</h5>
-                <p class="card-subtitle" style="padding-bottom: 20px;">
+                <p class="card-subtitle" style="padding-bottom: 20px">
                   You can follow up with booking's Payments Invitations
                 </p>
               </div>
@@ -330,7 +453,11 @@
                 </thead>
                 <tbody>
                   <!-- start row -->
-                  <tr class="search-items" v-for="item in payments" :key="'notification-' + item.id">
+                  <tr
+                    class="search-items"
+                    v-for="item in payments"
+                    :key="'notification-' + item.id"
+                  >
                     <td>{{ item.id }}</td>
                     <td>{{ item.bookingId }}</td>
                     <td>{{ item.inviterCustomerId }}</td>
@@ -342,7 +469,11 @@
 
                     <td>
                       <div class="action-btn">
-                        <a @click="get(item.id)" href="javascript:void(0)" class="text-info edit">
+                        <a
+                          @click="get(item.id)"
+                          href="javascript:void(0)"
+                          class="text-info edit"
+                        >
                           <div class="eye-display">
                             <img src="/icons/eye-filled.png" alt="" />
                           </div>
@@ -360,7 +491,7 @@
             <div class="col-12 row">
               <div class="col-12">
                 <h5 class="card-title fw-semibold">Past Services</h5>
-                <p class="card-subtitle" style="padding-bottom: 20px;">
+                <p class="card-subtitle" style="padding-bottom: 20px">
                   You can follow up with booking's Past Services
                 </p>
               </div>
@@ -380,29 +511,45 @@
                 </thead>
                 <tbody>
                   <!-- start row -->
-                  <tr class="search-items" v-for="item in services" :key="'booking-' + item.id">
+                  <tr
+                    class="search-items"
+                    v-for="item in services"
+                    :key="'booking-' + item.id"
+                  >
                     <td>{{ item.serviceId }}</td>
                     <td>{{ item.numberOfGuests }}</td>
                     <td>{{ item.dayId }}</td>
                     <td>{{ getDate(item.bookingTime) }}</td>
                     <td>{{ item.totalPrice }}</td>
                     <td>
-                      <span v-if="item.paymentStatus == 'PAID'" class="btn btn-sm badge-success">PAID</span>
+                      <span
+                        v-if="item.paymentStatus == 'PAID'"
+                        class="btn btn-sm badge-success"
+                        >PAID</span
+                      >
                       <span v-else class="btn btn-sm badge-danger">{{
-      item.paymentStatus
-    }}</span>
+                        item.paymentStatus
+                      }}</span>
                     </td>
                     <td>
                       <div class="action-btn">
-                        <a @click="goto(item.id)" href="javascript:void(0)" class="text-info ms-2">
+                        <a
+                          @click="goto(item.id)"
+                          href="javascript:void(0)"
+                          class="text-info ms-2"
+                        >
                           <i class="ti ti-eye fs-5"></i>
                         </a>
-                        <a @click="
-      performAction(
-        item.id,
-        '/base/api/bookings/' + item.id
-      )
-      " href="javascript:void(0)" class="text-dark ms-2">
+                        <a
+                          @click="
+                            performAction(
+                              item.id,
+                              '/base/api/bookings/' + item.id
+                            )
+                          "
+                          href="javascript:void(0)"
+                          class="text-dark ms-2"
+                        >
                           <i class="ti ti-trash fs-5"></i>
                         </a>
                       </div>
@@ -414,26 +561,52 @@
           </div>
         </div>
       </div>
-      <div class="modal fade" id="addVendorModal" tabindex="-1" role="dialog" aria-labelledby="addVendorModalTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document"
-          style="width: 50% !important; max-width: 50% !important">
+      <div
+        class="modal fade"
+        id="addVendorModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="addVendorModalTitle"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-dialog-centered"
+          role="document"
+          style="width: 50% !important; max-width: 50% !important"
+        >
           <div class="modal-content">
             <div class="modal-header d-flex align-items-center">
               <h5 class="modal-title">{{ $t("Manage Date & Time") }}</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
             <div class="modal-body">
               <div class="add-contact-box">
                 <div class="add-contact-content">
                   <!-- <form id="addContactModalTitle"> -->
-                  <div class="tab-pane fade active show" id="pills-account" role="tabpanel"
-                    aria-labelledby="pills-account-tab" tabindex="0">
+                  <div
+                    class="tab-pane fade active show"
+                    id="pills-account"
+                    role="tabpanel"
+                    aria-labelledby="pills-account-tab"
+                    tabindex="0"
+                  >
                     <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 d-flex align-items-stretch">
-                        <div class="card w-100 position-relative overflow-hidden">
+                      <div
+                        class="col-lg-12 col-md-12 col-sm-12 d-flex align-items-stretch"
+                      >
+                        <div
+                          class="card w-100 position-relative overflow-hidden"
+                        >
                           <div class="card-body p-4">
-                            <calendar :booking="data" @update="updateBookingTime" />
+                            <calendar
+                              :booking="data"
+                              @update="updateBookingTime"
+                            />
                           </div>
                         </div>
                       </div>
@@ -444,7 +617,11 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button id="" @click="submit()" class="btn btn-success rounded-pill px-4">
+              <button
+                id=""
+                @click="submit()"
+                class="btn btn-success rounded-pill px-4"
+              >
                 Save
               </button>
             </div>
@@ -656,27 +833,30 @@ export default {
   methods: {
     async getLogs() {
       try {
-        const response = await this.$axios.get(`/api/service/log-bookings/booking/${this.id}?page=0&size=10`, {
-          auth: {
-            username: "user",
-            password: "123456",
-          },
-        });
+        const response = await this.$axios.get(
+          `/api/service/log-bookings/booking/${this.id}?page=0&size=10`,
+          {
+            auth: {
+              username: "user",
+              password: "123456",
+            },
+          }
+        );
         const data = response.data.response.content;
         this.logs = data;
         console.log(data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     },
-    updateBookingTime() { },
+    updateBookingTime() {},
     updatePaymentStatus(e) {
       let val = e.target.value;
       const formData = {
         paymentStatus: val,
       };
       axios
-        .put(
+        .patch(
           "/base/api/bookings/" + this.id + "/payment-status",
           formData,
           this.config
@@ -844,7 +1024,6 @@ table.logs {
 
 table.logs tbody {
   border: 1px solid #aec3ff;
-
 }
 
 table.logs th {
@@ -956,7 +1135,7 @@ img.rounded-circle {
 .bx-gray label {
   font-size: 18px;
   font-weight: 500;
-  color: black
+  color: black;
 }
 
 .bx-gray select {
@@ -981,14 +1160,12 @@ img.rounded-circle {
 
 .btns .send-notification {
   background: #396ce8;
-
 }
 
 .btns .cancel-booking {
   background: none;
   border: 1px solid #bd6d70;
   color: #bd6d70;
-
 }
 
 .addvendormodal {

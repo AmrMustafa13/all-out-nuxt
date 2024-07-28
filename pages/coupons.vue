@@ -157,7 +157,7 @@
             >
           </a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a
             href="javascript:void(0)"
             class="nav-link note-link d-flex align-items-center justify-content-center px-3 px-md-3 me-0 me-md-2 text-body-color"
@@ -174,7 +174,7 @@
           >
             <span class="d-none d-md-block font-weight-medium">Disabled</span>
           </a>
-        </li>
+        </li> -->
         <li
           class="nav-item ms-auto row gap-1"
           style="position: absolute; right: 1em"
